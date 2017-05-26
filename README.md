@@ -4,11 +4,10 @@
 **PoolSprayer** is a basic library to spray the **Windows Kernel Pool**. 
 The code currently handles the spraying of **NonPagedPool** (NonPagedPoolNx  for windows >=8 ) and **PagedPool**, but might support other types of pool.
 
-The method used to spray the NonPagedPool are explained in details in this paper:
+The methods used to spray the pool are explained in details in this paper:
 http://trackwatch.com/windows-kernel-pool-spraying/
 
 The method used to spray the PagedPool is a bit different since there is by default severals pools used as PagedPools, making the previous methods obsolete.
-For the PagedPool, when searching for a correct gap, we use the address to retrieves the handles instead of using the handles to retrieve the addresses. This method could be applied to NonPagedPool but the current method is faster, so I kept it for the NonPagedPool.
 
 # How to use 
 
@@ -41,4 +40,4 @@ So when spraying, I suggest you to let this offset at ``0x60`` by default, but i
 
 ## Thanks
 
-Those researchs and library were done during my internship at Armature Technologies.
+Those researchs and library were made during my internship at Armature Technologies.

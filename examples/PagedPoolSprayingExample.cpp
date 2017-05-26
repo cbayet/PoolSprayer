@@ -23,8 +23,10 @@ HANDLE AllocatorPagedPool()
 	rand_name2[i] = 0;
 
 	/*
-		Note: The function CreatePrivateNamespace is very interesting. It creates a directory object ; you can control the size of the directory object because the name
-		of the BoundaryDescriptor is stored directly in the PagedPool... So the size of the chunk change, making this object a great choice for spraying !
+		Note: The function CreatePrivateNamespace is very interesting.
+		It creates a directory object ; you can control the size of the directory object
+		because the name of the BoundaryDescriptor is stored directly in the PagedPool...
+		So the size of the chunk change, making this object a great choice for spraying !
 	*/
 	
 	name = CreatePrivateNamespaceA(NULL, CreateBoundaryDescriptorA(rand_name, 0) , rand_name2);

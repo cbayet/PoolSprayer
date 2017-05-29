@@ -9,6 +9,9 @@ http://trackwatch.com/windows-kernel-pool-spraying/
 
 The method used to spray the PagedPool is a bit different since there is by default severals pools used as PagedPools, making the previous methods obsolete.
 
+This library only works on x64 architectures, but can be easyly converted for x32 architectures.
+Tested and approved on Windows 7 x64 and Windows 10 x64.
+
 # How to use 
 
 You can find some code snippets in ``example/``.
@@ -19,10 +22,10 @@ The first thing to do before spraying is to chose an object. You have to chose t
 - The PoolType where the object is allocated
 - The size of the chunk allocated when creating the object
 
-For example, the ``IoCompleReservedObject``  is allocated in the **NonPagedPool** (NonPagedPoolNx for windows >=8) and the size of its chunk is ``0xC0``. 
+For example, on x64 architectures, the ``IoCompleReservedObject``  is allocated in the **NonPagedPool** (NonPagedPoolNx for windows >=8) and the size of its chunk is ``0xC0``. 
 The ``RegistryKey`` is allocated in the **PagedPool** and the size of its chunk is ``0x100``.
 
-You can easyly retrieve these informations by allocating an object and debugging your kernel.
+You can easily find these informations by allocating an object and debugging your kernel.
 The size of the object is really important because it's directly related to the size of the holes you're going to create.
 With an object of size ``0x100``, you can create holes of ``0x100``, ``0x200``, ``0x300``, ``0x400``...
 

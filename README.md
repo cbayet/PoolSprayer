@@ -44,3 +44,7 @@ So when spraying, I suggest you to let this offset at ``0x60`` by default, but i
 ## Thanks
 
 Those researchs and library were made during my internship at Armature Technologies.
+
+## Contact
+
+[Twitter](https://twitter.com/OnlyTheDuck)

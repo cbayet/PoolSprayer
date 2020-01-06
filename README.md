@@ -5,7 +5,7 @@
 The code currently handles the spraying of **NonPagedPool** (NonPagedPoolNx  for windows >=8 ) and **PagedPool**, but might support other types of pool.
 
 The methods used to spray the pool are explained in details in this paper:
-http://trackwatch.com/windows-kernel-pool-spraying/
+https://www.gatewatcher.com/en/news/blog/windows-kernel-pool-spraying
 
 The method used to spray the PagedPool is a bit different since there is by default severals pools used as PagedPools, making the previous methods obsolete.
 
